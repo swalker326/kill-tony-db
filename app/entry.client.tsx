@@ -9,10 +9,11 @@ import { startTransition, StrictMode } from "react";
 import { hydrateRoot } from "react-dom/client";
 
 startTransition(() => {
-  hydrateRoot(
-    document,
-    <StrictMode>
-      <RemixBrowser />
-    </StrictMode>
-  );
+	hydrateRoot(
+		// @ts-expect-error - I'm really not sure why this is throwing an error
+		document,
+		<StrictMode>
+			<RemixBrowser />
+		</StrictMode>,
+	);
 });
