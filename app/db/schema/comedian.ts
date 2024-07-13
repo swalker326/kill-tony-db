@@ -1,7 +1,8 @@
 import { sqliteTable, text } from "drizzle-orm/sqlite-core";
-import { schemaId } from "..";
+
 import { appearances } from "./appearance";
 import { relations } from "drizzle-orm/relations";
+import { schemaId } from "./utils";
 
 export const comedians = sqliteTable("comedians", {
 	id: schemaId(),

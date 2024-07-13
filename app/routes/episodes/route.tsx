@@ -3,9 +3,7 @@ import { db } from "~/db";
 import { episodes as episodesTable } from "~/db/schema";
 
 export async function loader() {
-	const episodes = await db.query.episodes.findMany({
-		limit: 10,
-	});
+	const episodes = await db.query.episodes.findMany({ limit: 10 });
 	return episodes;
 }
 
@@ -26,12 +24,12 @@ export default function EpisodeRoute() {
 	return (
 		<div className="font-sans p-4">
 			<Form method="POST">
-				<button type="submit">Add Test Episode</button>
-			</Form>
-			<Form method="POST" action="/comedians">
-				<input type="text" name="name" />
-				<input type="text" name="appearances" />
-				<button type="submit">Add Comedian</button>
+				<button
+					className="bg-gray-800 text-red-400 rounded-md px-3 py-2"
+					type="submit"
+				>
+					Add Test Episode
+				</button>
 			</Form>
 			{loaderResponse.map((episode) => (
 				<div key={episode.id}>

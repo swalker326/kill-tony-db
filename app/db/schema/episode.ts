@@ -1,5 +1,5 @@
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
-import { schemaId } from "..";
+import { schemaId } from "./utils";
 
 export const episodes = sqliteTable("episodes", {
 	id: schemaId(),
